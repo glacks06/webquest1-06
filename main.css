@@ -1,0 +1,521 @@
+*{
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+ul li{
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.detail{
+    display: block;
+    width: 130px; height: 45px;
+    line-height: 45px;
+    text-align: center;
+    color: #333333;
+    border: 2px solid #333333;
+    transition-duration: 0.3s;
+}
+.detail:hover{
+    color: white;
+    background-color: #333333;
+}
+
+/* header */
+header {
+    width: 100%; height: 121px;
+    background-color: #F6F5F0;
+    position: fixed;
+    z-index: 10;
+    top: 0px;
+}
+header > .inner{
+    display: flex;
+    position: relative;
+    width: 1100px; height: 120px;
+    /* background-color: red; */
+    margin: 0 auto;
+}
+header #logo{
+    display: block;
+    align-self: center;
+}
+
+/* header -> nav */
+header ul{
+    display: flex;
+    position: absolute;
+}
+header #utility_menu{
+    top: 5px; right: 0px;
+    font-size: 12px;
+}
+header #utility_menu #search{
+    width: 30px; height: 30px;
+    background-color: white;
+}
+header #utility_menu li{
+    margin: 0px 5px;
+    line-height: 30px;
+    color: grey;
+}
+header #utility_menu li a:hover{color: black;}
+
+header #main_menu{
+    right: 0px; bottom: 0px;
+    font-size: 13px;
+}
+header #main_menu li{
+    position: relative;
+    height: 55px;
+    margin: 0px 5px; padding: 5px 20px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+/* menu detail 표시 */
+header .menu_details{
+    display: none;
+    position: absolute;
+    top: 120px;
+    width: 100%;
+    color: white;
+    background-color: #2C2A29;
+}
+.menu_details .inner{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1100px;
+    margin: 0 auto;
+}
+.menu_details .inner ul{
+    display: block;
+    position: static;
+    width: 220px;
+}
+.menu_details .inner ul > h4{
+    height: 45px;
+    line-height: 45px;
+    margin-top: 10px;
+}
+.menu_details .inner ul > li{
+    font-size: 12px;
+    color: #999999;
+    margin: 10px 0px;
+}
+.menu_details .inner ul > li:hover{
+    color: #669900;
+}
+
+header .menuImg{
+    width: 100%;
+    background-image: url('webres-starbucks/images/main_menu_pattern.jpg');
+}
+header .menuImg .inner{
+    display: block;
+    height: auto;
+    padding: 20px 0px;
+}
+header .menuImg .inner p{
+    font-size: 12px;
+    margin-bottom: 7px;
+    height: 50px;
+    line-height: 25px;
+}
+header .menuImg .inner span{
+    color: green;
+}
+
+/* visual background */
+#visual_bg{
+    width: 100%; height: 646px;
+    margin-top: 121px;
+    background-image: url('webres-starbucks/images/visual_bg.jpg');
+}
+#visual_bg .inner{
+    width: 1100px; height: 646px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+}
+#visual_bg .inner #visual_title{
+    width: 470px;
+    margin-top: 50px;
+}
+#visual_bg .inner #visual_title .detail{
+    width: 100px;
+    margin: 15px auto;
+    line-height: 45px;
+    color: #592B18;
+    border: 2px solid #592B18;
+}
+#visual_bg .inner #visual_title .detail:hover{
+    color: white;
+    background-color: #592B18;
+}
+#visual_bg .inner > img{display: block; position: absolute;}
+#visual_bg .inner #oatmeal_img{right: 0; bottom: 0px;}
+#visual_bg .inner #oatmeal_text{right: 200px; top: 30px;}
+#visual_bg .inner #caramel_img{right: 200px; bottom: 0px;}
+#visual_bg .inner #caramel_text{right: 450px; bottom: 240px;}
+#visual_bg .inner #spoon{right: 450px; bottom: 0px;}
+
+/* visual background fade-in effect*/
+.fade-hidden{
+    opacity: 0;
+    transition-duration: 1s;
+}
+.fade-in{
+    opacity: 1;
+}
+.fade-middle{
+    opacity: 0.5;
+}
+
+/* 공지사항, 스타벅스 프로모션 */
+#inform{width: 100%; height: 750px;}
+#inform #inform_head{
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    line-height: 50px;
+}
+#inform #inform_head div{
+    display: flex;
+    width: 55%; height: 60px;
+    font-size: 20px;
+    line-height: 60px;
+    /* padding: 5px; */
+    justify-content: end;
+    color: white;
+    background-color: black;
+}
+#inform #inform_head div span{
+    width: 50px; height: 50px;
+    text-align: center;
+    clip-path: circle(25%);
+    color: black;
+    background-color: white;
+}
+#inform #inform_head div ul{
+    display: block;
+    width: 500px;
+    margin-left: 20px;
+    font-size: 15px;
+    overflow: hidden;
+}
+#inform #inform_head div ul li{width: 500px; height: 60px; transition-duration: 0.5s;}
+
+
+#inform #inform_head > p{
+    width: 45%; height: 60px;
+    padding: 5px 5px 0px 250px;
+}
+
+#inform #promotion{
+    width: 100%; height: 620px;
+    overflow: hidden;
+}
+#inform #promotion .inner{
+    display: flex;
+    width: 2547px; height: 553px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+    overflow: hidden;
+    /* background-color: aqua; */
+}
+#inform #promotion .promotion_items{
+    flex: 0 0 auto;
+    width: 819px; height: 553px;
+    margin: 0px 15px;
+    transition-duration: 0.5s;
+    z-index: 0;
+}
+#inform #promotion .promotion_items .detail{
+    margin: 0 auto;
+    position: relative;
+    bottom: 60px;
+}
+#inform #promotion .inner > div{ /*오른쪽, 왼쪽 이동 버튼*/
+    width: 50px; height: 50px;
+    margin: 0 auto;
+    position: absolute;
+    text-align: center;
+    line-height: 50px;
+    font-size: 30px;
+    border-radius: 50%;
+    border: 1px solid black;
+    z-index: 5;
+    transition-duration: 0.5s;
+}
+#inform #promotion .inner > div:hover{
+    background-color: black;
+    color: white;
+
+    cursor: pointer;
+}
+#inform #promotion .inner #left_scroll_button{
+    top: 250px;
+    left: 750px;
+}
+#inform #promotion .inner #right_scroll_button{
+    top: 250px;
+    right: 750px;
+}
+
+#inform > nav{
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* My Starbucks Rewords 배너 */
+#reword{
+    display: flex;
+    width: 100%; height: 241px;
+    margin: 0 auto;
+}
+#reword::before{
+    display: block;
+    content: ' ';
+    width: 50%; height: 241px;
+    background-color: #272727;
+}
+#reword::after{
+    display: block;
+    content: ' ';
+    width: 50%; height: 241px;
+    background-color: #d5c798;
+}
+#reword .reword_img{
+    width: 1100px;height: 241px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: url('webres-starbucks/images/rewards.jpg');
+}
+#reword .reword_img > div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 250px; height: 120px;
+    position: absolute;
+    right: 0; bottom: 0;
+}
+#reword .reword_img > div a{
+    display: block;
+    text-align: center;
+    line-height: 50px;
+    transition-duration: 0.5s;
+}
+#reword .reword_img > div #signUp{
+    width: 140px; height: 50px;
+    margin-right: 10px;
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+}
+#reword .reword_img > div #signUp:hover{
+    color: black;
+    background-color: #d5c798;
+}
+#reword .reword_img > div #logIn{
+    width: 100px; height: 50px;
+    border: 2px solid black;
+}
+#reword .reword_img > div #logIn:hover{color: white; background-color: black;}
+#reword .reword_img > div #gift{
+    width: 250px; height: 50px;
+    border: 2px solid black;
+}
+#reword .reword_img > div #gift:hover{color: white; background-color: black;}
+
+
+/* 유튜브 영상 div */
+#youtube{
+    width: 100%; height: 700px;
+    background-color: grey;
+    position: relative;
+}
+#youtube .inner{
+    width: 1300px; height: 700px;
+    /* position: relative; */
+}
+iframe{
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#youtube::before{
+    content: '';
+    display: block;
+    width: 1244.44px; height: 700px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-image: url('webres-starbucks/images/video_cover_pattern.png');
+}
+#youtube .inner img{
+    position: absolute;
+    z-index: 2;
+}
+#youtube #floating1{
+    top: 100px;
+    left: 100px;
+}
+#youtube #floating2{
+    top: 400px;
+    left: 200px;
+}
+#youtube #floating3{
+    top: 500px;
+    right: 100px;
+}
+
+/* sections 메뉴 자세히보기*/
+.inner{
+    width: 1100px; height: 400px;
+    position: relative;
+    margin: 0 auto;
+}
+
+#coffee_blend{
+    width: 100%; height: 400px;
+    background-image: url('webres-starbucks/images/season_product_bg.jpg');
+}
+#coffee_blend .inner img{
+    display: block;
+    position: absolute;
+}
+#coffee_blend .inner > div{
+    width: 600px; height: 400px;
+    position: absolute; right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#coffee_blend .inner > div p{font-size: 20px; margin-bottom: 10px;}
+#coffee_blend .inner > div p b{font-size: 28px;}
+#coffee_blend .inner > div span{margin-bottom: 30px;}
+
+
+#reserve_coffee{
+    width: 100%; height: 400px;
+    background-image: url('webres-starbucks/images/reserve_bg.jpg');
+}
+#reserve_coffee .inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#reserve_coffee .inner img{display: block;}
+#reserve_coffee .inner div{
+    width: 450px; height: 160px;
+    padding: 15px;
+    margin: 0 20px;
+}
+#reserve_coffee .inner div h1{color: white;}
+#reserve_coffee .inner div p{font-size: 14px; color: #D9AA8A; margin: 15px 0;}
+#reserve_coffee .inner .detail{
+    color: #D9AA8A;
+    border: 2px solid #D9AA8A;
+}
+#reserve_coffee .inner .detail:hover{
+    color: white;
+    background-color: #D9AA8A;
+}
+
+
+#pick_your_favorite{
+    display: flex;
+    justify-content: center;
+    width: 100%; height: 700px;
+    background-image: url('webres-starbucks/images/favorite_bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+#pick_your_favorite .inner{
+    display: flex;
+    width: 500px; height: 700px;
+    position: relative;
+    right: 400px;
+
+    
+
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: end;
+}
+#pick_your_favorite .inner img{display: block; margin: 20px 0px;}
+#pick_your_favorite .detail{
+    color: white;
+    border: 2px solid white;
+    margin: 20px 0px;
+}
+#pick_your_favorite .detail:hover{
+    color: black;
+    background-color: white;
+}
+
+
+#reserve_stores{
+    display: flex;
+    width: 100%; height: 600px;
+    background-image: url('webres-starbucks/images/reserve_store_bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#reserve_stores img{
+    display: block;
+    width: 334px; height: 334px;
+    align-self: center;
+}
+
+#find_stores{
+    width: 100%; height: 400px;
+    position: relative;
+    background-image: url('webres-starbucks/images/find_store_bg.jpg');
+}
+#find_stores .inner > img{display: block; position: absolute;}
+#find_stores .inner .img_box img{display: block; position: absolute;}
+#find_stores .inner #texture1{top: 0px; left: 378.5px;}
+#find_stores .inner #texture2{bottom: 0px; right: 20px;}
+#find_stores .inner > div{
+    width: 550px; height: 400px;
+    float: left;
+}
+#find_stores .inner .circle_img{clip-path: circle(50%);}
+#find_stores .inner #find_store_picture1{bottom: 100px;}
+#find_stores .inner #find_store_picture2{left: 200px; bottom: 50px;}
+#find_stores .inner .text_box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#find_stores .inner .text_box > img{margin:20px 0px;}
+
+
+#awards{
+    width: 100%; height: 120px;
+    background-color: #272727;
+    border-bottom: solid #353535 1px;
+}
+
+/* footer */
+footer{
+    width: 100%; height: 330px;
+    background-color: #272727;
+}
