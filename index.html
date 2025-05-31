@@ -5,6 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <script defer src="main.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,10 +26,11 @@
                 <li><a href="">My Starbucks</a></li>
                 <li>|</li>
                 <li><a href="">Customer Service & Ideas</a></li>
-                <li>|</li>
+                <li></li>
                 <li><a href="">Find a Store</a></li>
-                <li><div id="search"></div></li>
+                <li><input type="text" id="all_range_search"><i class="fa-solid fa-magnifying-glass" id="search_icon"></i></li>
             </ul>
+            
 
 
             <ul id="main_menu">
@@ -273,7 +282,6 @@
     <section id="inform">
       <div id="inform_head">
         <div><b>공지사항</b> 
-          <!-- 나중에 구현하기 -->
           <ul>
             <li class="inform_texts">[당첨자 발표] 뉴이어 전자수증 이벤트</li>
             <li class="inform_texts">크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</li>
@@ -289,37 +297,34 @@
 
       <section id="promotion">
         <div class="inner">
-          <div id="left_scroll_button" onclick="promotionScroll_left()">←</div>
-          <div id="right_scroll_button" onclick="promotionScroll_right()">→</div>
-          <article class="promotion_items">
-            <img src="webres-starbucks/images/promotion_slide1.jpg" alt="">
-            <a href="" class="detail">자세히 보기</a>
-          </article>
-          <article class="promotion_items">
-            <img src="webres-starbucks/images/promotion_slide2.jpg" alt="">
-            <a href="" class="detail">자세히 보기</a>
-          </article>
-          <article class="promotion_items">
-            <img src="webres-starbucks/images/promotion_slide3.jpg" alt="">
-            <a href="" class="detail">자세히 보기</a>
-          </article>
-          <article class="promotion_items">
-            <img src="webres-starbucks/images/promotion_slide4.jpg" alt="">
-            <a href="" class="detail">자세히 보기</a>
-          </article>
-          <article class="promotion_items">
-            <img src="webres-starbucks/images/promotion_slide5.jpg" alt="">
-            <a href="" class="detail">자세히 보기</a>
-          </article>
+          <div id="left_scroll_button" class="slide_button">←</div>
+          <div id="right_scroll_button" class="slide_button">→</div>
+          <div class="promotion_slide">
+            <div class="promotion_items">
+              <img src="webres-starbucks/images/promotion_slide1.jpg" alt="">
+              <a href="" class="detail">자세히 보기</a>
+            </div>
+            <div class="promotion_items">
+              <img src="webres-starbucks/images/promotion_slide2.jpg" alt="">
+              <a href="" class="detail">자세히 보기</a>
+            </div>
+            <div class="promotion_items">
+              <img src="webres-starbucks/images/promotion_slide3.jpg" alt="">
+              <a href="" class="detail">자세히 보기</a>
+            </div>
+            <div class="promotion_items">
+              <img src="webres-starbucks/images/promotion_slide4.jpg" alt="">
+              <a href="" class="detail">자세히 보기</a>
+            </div>
+            <div class="promotion_items">
+              <img src="webres-starbucks/images/promotion_slide5.jpg" alt="">
+              <a href="" class="detail">자세히 보기</a>
+            </div>
+          </div>
         </div>
+        <!-- <div class="dots_div"></div> -->
       </section>
-      <nav>
-        <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
-        <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
-        <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
-        <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
-        <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
-      </nav>
+
     </section>
 
 
@@ -335,33 +340,33 @@
 
     <section id="youtube">
       <div class="inner">
-        <img src="webres-starbucks/images/floating1.png" alt="" id="floating1">
-        <img src="webres-starbucks/images/floating2.png" alt="" id="floating2">
-        <img src="webres-starbucks/images/floating3.png" alt="" id="floating3">
+        <img src="webres-starbucks/images/floating1.png" alt="" id="floating1" class="floatings">
+        <img src="webres-starbucks/images/floating2.png" alt="" id="floating2" class="floatings">
+        <img src="webres-starbucks/images/floating3.png" alt="" id="floating3" class="floatings">
         <iframe width="1244.44" height="700" src="https://www.youtube.com/embed/An6LvWQuj_8?autoplay=1&mute=1&controls=0&loop=1&playlist=An6LvWQuj_8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
     </section>
 
     <section id="coffee_blend">
       <div class="inner">
-        <img src="webres-starbucks/images/season_product_image.png" alt="">
+        <img src="webres-starbucks/images/season_product_image.png" alt="" class="slide-in-left">
         <div>
-          <p>
+          <p class="slide-in-right">
             상쾌하게 여름을 반겨줄 시즌 원두<br>
             <b>아이스 커피 블렌드</b>
           </p>
-          <span>
+          <span class="slide-in-right">
             아프리카와 라틴 아메리카 커피의 블렌드로 시트러스함과 은은한 캐러멜 향을<br>
             동시에 느낄 수 있으며, 차갑게 즐길 때 풍미가 더욱 깊어지는 원두입니다.
           </span>
-          <a href="" class="detail">자세히 보기</a>
+          <a href="" class="detail slide-in-right">자세히 보기</a>
         </div>
       </div>
     </section>
     <section id="reserve_coffee">
       <div class="inner">
-        <img src="webres-starbucks/images/reserve_logo.png" alt="">
-        <div>
+        <img src="webres-starbucks/images/reserve_logo.png" alt="" class="slide-in-left">
+        <div class="slide-in-left">
           <h1>
             스타벅스 리저브ᵗᵐ 커피
           </h1>
@@ -369,41 +374,67 @@
             스타벅스 리저브ᵗᵐ는 진귀하고 이국적이며 우리가 지금껏 만나보지 못한
             특별한 프리미엄 커피를 여러분에게 소개해드리는 프로그램입니다.
           </p>
-          <a href="" class="detail">자세히 보기</a>
+          <a href="" class="detail slide-in-left">자세히 보기</a>
         </div>
-        <img src="webres-starbucks/images/reserve_image.png" alt="">
+        <img src="webres-starbucks/images/reserve_image.png" alt="" class="slide-in-right">
       </div>
     </section>
     <section id="pick_your_favorite">
       <div class="inner">
-        <img src="webres-starbucks/images/favorite_text1.png" alt="">
-        <img src="webres-starbucks/images/favorite_text2.png" alt="">
-        <a href="" class="detail">자세히 보기</a>
+        <img src="webres-starbucks/images/favorite_text1.png" alt="" class="slide-in-left">
+        <img src="webres-starbucks/images/favorite_text2.png" alt="" class="slide-in-left">
+        <a href="" class="detail slide-in-left">자세히 보기</a>
       </div> 
     </section>
     <section id="reserve_stores">
-      <img src="webres-starbucks/images/reserve_store_medal_front.png" alt="">
+      <div class="medal">
+        <div class="medal_inner">
+          <div id="medal_front"></div>
+          <div id="medal_back"><a class="detail">매장 찾기</a></div>
+        </div>
+      </div>
     </section>
     <section id="find_stores">
       <div class="inner">
         <img src="webres-starbucks/images/find_store_texture1.png" alt="" id="texture1">
         <img src="webres-starbucks/images/find_store_texture2.png" alt="" id="texture2">
         <div class="img_box">
-          <img src="webres-starbucks/images/find_store_picture1.jpg" alt="" id="find_store_picture1" class="circle_img">
-          <img src="webres-starbucks/images/find_store_picture2.jpg" alt="" id="find_store_picture2" class="circle_img">
+          <img src="webres-starbucks/images/find_store_picture1.jpg" alt="" id="find_store_picture1" class="circle_img slide-in-left">
+          <img src="webres-starbucks/images/find_store_picture2.jpg" alt="" id="find_store_picture2" class="circle_img slide-in-left">
         </div>
         <div class="text_box">
-          <img src="webres-starbucks/images/find_store_text1.png" alt="">
-          <img src="webres-starbucks/images/find_store_text2.png" alt="">
-          <a href="" class="detail">매장 찾기</a>
+          <img src="webres-starbucks/images/find_store_text1.png" alt="" class="slide-in-right">
+          <img src="webres-starbucks/images/find_store_text2.png" alt="" class="slide-in-right">
+          <a href="" class="detail slide-in-right">매장 찾기</a>
         </div>
         
       </div>
     </section>
+
     <section id="awards">
-
+      <div class="awards_base">
+        <div id="awards_left_scroll_button" class="arrow" onclick="awardsScroll_left()">←</div>
+        <div id="awards_right_scroll_button" class="arrow" onclick="awardsScroll_right()">→</div>
+        <div class="inner">
+          <img src="webres-starbucks/images/awards_slide1.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide2.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide3.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide4.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide5.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide6.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide7.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide8.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide9.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide10.jpg" alt="" class="awards_items">
+          
+          <img src="webres-starbucks/images/awards_slide1.jpg" alt="" class="awards_items">
+          <!-- <img src="webres-starbucks/images/awards_slide2.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide3.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide4.jpg" alt="" class="awards_items">
+          <img src="webres-starbucks/images/awards_slide5.jpg" alt="" class="awards_items"> -->
+        </div>
+      </div>
     </section>
-
     <footer>
 
     </footer>

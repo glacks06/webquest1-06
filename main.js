@@ -40,6 +40,17 @@ for(let i = 0; i < menus.length; i++){
         menuHoverStyleOff(menus[i]);
     })
 }
+ 
+// head 검색창 아이콘
+const search_icon = document.getElementById('search_icon');
+const search_box = document.getElementById('all_range_search');
+
+search_box.addEventListener('focus', function() {
+    search_icon.style.opacity = '0';
+});
+search_box.addEventListener('blur', function() {
+    search_icon.style.opacity = '1';
+});
 
 // visual images fade in effect
 
@@ -91,73 +102,71 @@ function informScroll(arr, tran, scroll){
 setInterval(informScroll, 2000, inform_text_arr, transforms, inform_scroll);
 
 // promotion items 캐러셀
-let promotions = document.getElementsByClassName('promotion_items'); // width size == 849px
-let promotions_width = 849;
+$('#promotion .inner .promotion_slide').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    nextArrow:$('#right_scroll_button'),
+    prevArrow:$('#left_scroll_button'),
+    dots: true,
+});
 
-let isCanClick = true;
+// youtube section image moving effect
 
-var promotion_trans = [];
-var promotion_item_arr = document.getElementsByClassName('promotion_items');
-for(let i = 0; i < 5; i++) promotion_trans.push(0);
+function floating_imgs_move(img, moveRange){
+    img.style.transform = `translateY(${-moveRange}px)`;
+    setTimeout(function(){
+        img.style.transform = `translateY(0px)`;
+    }, 5000);
+}
 
-promotion_opacity(); // 중앙 요소 외에는 반투명 처리
-function promotion_opacity(){
-    for(let i = 0; i < promotion_item_arr.length; i++){
-        if(promotion_trans[i] == (promotions_width*2) - (promotions_width*i)){ // 요소가 중앙에 있는지 체크(ex: 인덱스 2번 요소가 0일때 중앙)
-            promotion_item_arr[i].classList.remove('fade-middle');
-            promotion_item_arr[i].classList.add('fade-in');
-        }
-        else{
-            promotion_item_arr[i].classList.remove('fade-in');
-            promotion_item_arr[i].classList.add('fade-middle');
-        }
+let floating_imgs = document.getElementsByClassName('floatings');
+let moveRange = 25;
+
+let direction = 1;
+for(let i = 0; i < 3; i++){
+    floating_imgs_move(floating_imgs[i], moveRange*direction);
+    setInterval(floating_imgs_move, 10000, floating_imgs[i], moveRange*direction);
+    direction *= -1;
+}
+
+
+// slide in effect
+
+let slide_in_boxs_left = document.getElementsByClassName('slide-in-left');
+let slide_in_boxs_right = document.getElementsByClassName('slide-in-right');
+
+
+function slide_in_effect(element, delayTime, direction){
+    let rect = element.getBoundingClientRect();
+    if((rect.bottom - (rect.height/2)) <= window.innerHeight){
+        setTimeout(function(){
+            element.style.opacity = '1';
+            element.style.transform = "translateX(0px)";
+            element
+        }, delayTime);
+    }
+    else{
+        element.style.opacity = '0';
+        element.style.transform = `translateX(${300*direction}px)`;
     }
 }
-function promotionScroll_left(){
-    if(isCanClick){
-        isCanClick = false;
-        setTimeout(function(){isCanClick = true;}, 200);
-        for(let i = 0; i < promotion_item_arr.length; i++){
-            if(promotion_trans[i] >= promotions_width*(4-i)){
-                setTimeout(function(){
-                    promotion_trans[i] = -(promotions_width*i);
-                    promotion_item_arr[i].style.transitionDuration = '0s';
-                    promotion_item_arr[i].style.transform = `translateX(${promotion_trans[i]}px)`;
-                    setTimeout(function(){
-                        promotion_item_arr[i].style.transitionDuration = '0.5s';
-                    }, 100);
-                }, 100);
-            }
-            else{
-                promotion_trans[i] += promotions_width;
-                promotion_item_arr[i].style.transform = `translateX(${promotion_trans[i]}px)`;
-            }
-        }
-    }
-    promotion_opacity();
-}
-function promotionScroll_right(){
-    if(isCanClick){
-        isCanClick = false;
-        setTimeout(function(){isCanClick = true;}, 200);
 
-        for(let i = 0; i < promotion_item_arr.length; i++){
-            if(promotion_trans[i] <= -(promotions_width*i)){
-                setTimeout(function(){
-                    promotion_trans[i] = promotions_width*(4-i);
-                    promotion_item_arr[i].style.transitionDuration = '0s';
-                    promotion_item_arr[i].style.transform = `translateX(${promotion_trans[i]}px)`;
-                    setTimeout(function(){
-                        promotion_item_arr[i].style.transitionDuration = '0.5s';
-                    }, 100);
-                }, 100);
-    
-            }
-            else{
-                promotion_trans[i] -= promotions_width;
-                promotion_item_arr[i].style.transform = `translateX(${promotion_trans[i]}px)`;
-            }
-        }
-        promotion_opacity();
-    }
+for(let i = 0; i < slide_in_boxs_left.length; i++){
+    window.addEventListener('scroll', function(){
+        slide_in_effect(slide_in_boxs_left[i], 0, -1);
+    });
 }
+for(let i = 0; i < slide_in_boxs_right.length; i++){
+    window.addEventListener('scroll', function(){
+        slide_in_effect(slide_in_boxs_right[i], 0, 1);
+    });
+}
+
+// awards 캐러셀
+
+$('#awards .inner').slick({
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    nextArrow:$('#awards_right_scroll_button'),
+    prevArrow:$('#awards_left_scroll_button')
+})
