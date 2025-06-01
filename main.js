@@ -70,6 +70,23 @@ window.addEventListener('scroll', function(){
     scrollToTop_button_appear(scrollToTop_button, 1000);
 });
 
+// 오른쪽 위 이벤트 info
+
+const side_eventInfo_box = $('.side_eventInfo');
+function head_eventInfo_appear(element, appear_point){
+    if(window.scrollY >= appear_point){
+        element.sty
+        element.fadeOut(500);
+    }
+    else{
+        element.fadeIn(500);
+    }
+}
+
+window.addEventListener('scroll', function(){
+    head_eventInfo_appear(side_eventInfo_box, 1000);
+});
+
 // visual images fade in effect
 
 let visual_imgs = [];

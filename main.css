@@ -151,8 +151,18 @@ header .menuImg .inner span{
 
 
 /* 상단에 있을 때 표시되는 오른쪽 위 이벤트 정보 */
-.header_side_eventInfo{
-
+header .side_eventInfo{
+    width: 130px; height: 300px;
+    overflow: hidden;
+    position: fixed;
+    right: 10px;
+    top: 130px;
+    z-index: 500;
+}
+header .side_eventInfo img{
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 10px;
 }
 /* 상단으로 이동 버튼 */
 #scrollToTop{
@@ -162,7 +172,7 @@ header .menuImg .inner span{
     bottom: 20px;
     right: 20px;
     border: white solid 2px;
-    
+
     color: white;
     font-size: 20px;
     text-align: center;
