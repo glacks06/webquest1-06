@@ -154,6 +154,23 @@ header .menuImg .inner span{
 .header_side_eventInfo{
 
 }
+/* 상단으로 이동 버튼 */
+#scrollToTop{
+    width: 50px; height: 50px;
+    transform: translateX(100px);
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    border: white solid 2px;
+    
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgb(36, 36, 36);
+    z-index: 50;
+    transition-duration: 0.5s;
+}
 
 /* visual background */
 #visual_bg{
@@ -202,7 +219,7 @@ header .menuImg .inner span{
 }
 
 /* 공지사항, 스타벅스 프로모션 */
-#inform{width: 100%; height: 750px; overflow: hidden;}
+#inform{width: 100%; overflow: hidden;}
 #inform #inform_head{
     display: flex;
     overflow: hidden;
@@ -238,6 +255,8 @@ header .menuImg .inner span{
 #inform #inform_head div ul li{width: 500px; height: 60px; transition-duration: 0.5s;}
 
 
+
+
 #inform #inform_head > p{
     width: 45%; height: 60px;
     padding: 5px 5px 0px 250px;
@@ -258,11 +277,6 @@ header .menuImg .inner span{
 }
 #inform #promotion .promotion_items{
     width: 819px; height: 553px;
-    
-    /* height: 553px; */
-    /* margin: 0px 100px; */
-    /* z-index: 0; */
-    /* margin: 0px 1px; */
 }
 #inform #promotion .promotion_items .detail{
     margin: 0 auto;
@@ -319,18 +333,21 @@ header .menuImg .inner span{
     display: flex;
     width: 100%; height: 241px;
     margin: 0 auto;
+    z-index: 5;
 }
 #reword::before{
     display: block;
     content: ' ';
     width: 50%; height: 241px;
     background-color: #272727;
+    z-index: 4;
 }
 #reword::after{
     display: block;
     content: ' ';
     width: 50%; height: 241px;
     background-color: #d5c798;
+    z-index: 4;
 }
 #reword .reword_img{
     width: 1100px;height: 241px;
@@ -338,6 +355,7 @@ header .menuImg .inner span{
     left: 50%;
     transform: translateX(-50%);
     background-image: url('webres-starbucks/images/rewards.jpg');
+    z-index: 5;
 }
 #reword .reword_img > div{
     display: flex;
@@ -627,5 +645,47 @@ iframe{
 /* footer */
 footer{
     width: 100%; height: 330px;
+    padding-top: 50px;
     background-color: #272727;
+    overflow: hidden;
+}
+footer ul{
+    display: flex;
+    justify-content: center;
+}
+footer .footer_inform{
+    margin-top: 20px;
+}
+footer .footer_inform li{
+    margin: 0px 7px;
+    font-size: 15px;
+}
+footer div{
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+}
+footer div .footer_details{
+    width: 150px;
+    height: 40px;
+    border: white solid 3px;
+    margin: 0 10px;
+    line-height: 40px;
+    color: white;
+}
+footer .numbers_and_names{
+    margin-top: 30px;
+}
+footer .numbers_and_names li{
+    margin: 0px 7px;
+    font-size: 15px;
+    color: grey;
+}
+footer p{
+    text-align: center;
+    margin-top: 10px;
+}
+footer img{
+    display: block;
+    margin: 20px auto;
 }

@@ -52,6 +52,24 @@ search_box.addEventListener('blur', function() {
     search_icon.style.opacity = '1';
 });
 
+// 최상단 이동 버튼
+function scrollToTop_button_appear(element, appear_point){
+    if(window.scrollY >= appear_point){
+        element.style.transform = 'translateX(0px)';
+    }
+    else{
+        element.style.transform = 'translateX(100px)';
+    }
+}
+let scrollToTop_button = document.getElementById('scrollToTop');
+$('#scrollToTop').click(function(){
+    $('html, body').animate({scrollTop: 0}, 400);
+});
+
+window.addEventListener('scroll', function(){
+    scrollToTop_button_appear(scrollToTop_button, 1000);
+});
+
 // visual images fade in effect
 
 let visual_imgs = [];
@@ -101,8 +119,16 @@ function informScroll(arr, tran, scroll){
 }
 setInterval(informScroll, 2000, inform_text_arr, transforms, inform_scroll);
 
+// 스타벅스 프로모션 펼치기
+
+function starbucksPromotion_click(){
+    $('#promotion').slideToggle();
+}
+
 // promotion items 캐러셀
 $('#promotion .inner .promotion_slide').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
     slidesToShow: 3,
     slidesToScroll: 1,
     nextArrow:$('#right_scroll_button'),
@@ -165,6 +191,8 @@ for(let i = 0; i < slide_in_boxs_right.length; i++){
 // awards 캐러셀
 
 $('#awards .inner').slick({
+    autoplay: true,
+    autoplaySpeed: 3000,
     slidesToShow: 5,
     slidesToScroll: 1,
     nextArrow:$('#awards_right_scroll_button'),
