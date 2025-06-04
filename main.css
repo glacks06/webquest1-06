@@ -40,7 +40,6 @@ header > .inner{
     display: flex;
     position: relative;
     width: 1100px; height: 120px;
-    /* background-color: red; */
     margin: 0 auto;
 }
 header #logo{
@@ -243,13 +242,12 @@ header .side_eventInfo img{
     width: 55%; height: 60px;
     font-size: 20px;
     line-height: 60px;
-    /* padding: 5px; */
     justify-content: end;
     color: white;
     background-color: black;
 }
 #inform #inform_head div span{
-    width: 50px; height: 50px;
+    width: 60px; height: 60px;
     text-align: center;
     clip-path: circle(25%);
     color: black;
@@ -263,9 +261,6 @@ header .side_eventInfo img{
     overflow: hidden;
 }
 #inform #inform_head div ul li{width: 500px; height: 60px; transition-duration: 0.5s;}
-
-
-
 
 #inform #inform_head > p{
     width: 45%; height: 60px;
@@ -309,7 +304,6 @@ header .side_eventInfo img{
 #inform #promotion .inner > .slide_button:hover{
     background-color: black;
     color: white;
-
     cursor: pointer;
 }
 #inform #promotion .inner #left_scroll_button{
@@ -324,9 +318,7 @@ header .side_eventInfo img{
     display: flex;
     width: 200px; height: 100px;
     margin: 0 auto;
-    
     background-color: brown;
-    
 }
 .slick-dots li button:before{
     content: '' !important;
@@ -445,9 +437,6 @@ iframe{
     top: 500px;
     right: 100px;
 }
-
-/* sections 메뉴 slide in and out */
-
 
 /* sections 메뉴 자세히보기*/
 .inner{
@@ -622,7 +611,6 @@ iframe{
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    /* overflow: hidden; */
 }
 #awards .inner{
     width: 1200px; height: 120px;
@@ -666,10 +654,17 @@ footer ul{
 footer .footer_inform{
     margin-top: 20px;
 }
+
 footer .footer_inform li{
     margin: 0px 7px;
     font-size: 15px;
+    color: white;
+    cursor: pointer;
 }
+footer .footer_inform li:first-child{
+    color: green;
+}
+
 footer div{
     display: flex;
     margin-top: 30px;
@@ -682,7 +677,14 @@ footer div .footer_details{
     margin: 0 10px;
     line-height: 40px;
     color: white;
+    transition-duration: 0.5s;
 }
+footer div .footer_details:hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
 footer .numbers_and_names{
     margin-top: 30px;
 }
@@ -694,6 +696,7 @@ footer .numbers_and_names li{
 footer p{
     text-align: center;
     margin-top: 10px;
+    color: grey;
 }
 footer img{
     display: block;
