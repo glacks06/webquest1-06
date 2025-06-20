@@ -267,67 +267,57 @@ header .side_eventInfo img{
     padding: 5px 5px 0px 250px;
 }
 
-#inform #promotion{
+#inform .promotion{
     width: 100%; height: 620px;
     overflow: hidden;
+    background-color: skyblue;
 }
-#inform #promotion .inner{
+#inform .promotion .swiper-container{
     width: 2500px;
-    height: 580px;
-    padding: 10px;
+    height: 620px;
+    /* padding: 10px; */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    
+    background-color: brown;
+    overflow: hidden;
 }
-#inform #promotion .promotion_items{
-    width: 819px; height: 553px;
-}
-#inform #promotion .promotion_items .detail{
-    margin: 0 auto;
-    position: relative;
-    bottom: 60px;
-}
-
-#inform #promotion .inner > .slide_button{
-    width: 50px; height: 50px;
-    margin: 0 auto;
-    position: absolute;
+#inform .promotion .swiper-slide{
     text-align: center;
-    line-height: 50px;
+    background-color: red;
+}
+#inform .promotion .slide_button{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 250px;
+    text-align: center;
     font-size: 30px;
     border-radius: 50%;
     border: 1px solid black;
     z-index: 5;
     transition-duration: 0.5s;
 }
-#inform #promotion .inner > .slide_button:hover{
+#inform .promotion .slide_button:hover{
     background-color: black;
     color: white;
     cursor: pointer;
 }
-#inform #promotion .inner #left_scroll_button{
-    top: 250px;
+#inform .promotion .left{
     left: 750px;
 }
-#inform #promotion .inner #right_scroll_button{
-    top: 250px;
+#inform .promotion .right{
     right: 750px;
 }
-#inform #promotion .dots_div{
-    display: flex;
-    width: 200px; height: 100px;
-    margin: 0 auto;
-    background-color: brown;
+#inform .promotion .swiper-pagination{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
-.slick-dots li button:before{
-    content: '' !important;
-    display: block;
-    background-image: url('webres-starbucks/images/promotion_slide_pager.png');
-    background-size: cover;
-}
-.slick-dots li.slick-active button:before {
-    background-image: url('webres-starbucks/images/promotion_slide_pager_on.png');
+#inform .promotion .swiper-pagination-bullet{
+    width: 10px;
+    height: 10px;
+    /* background-color: #fff; */
 }
 
 /* My Starbucks Rewords 배너 */
@@ -606,30 +596,34 @@ iframe{
     background-color: #272727;
     border-bottom: solid #353535 1px;
 }
-#awards .awards_base{
-    width: 1500px; height: 120px;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
 #awards .inner{
-    width: 1200px; height: 120px;
+    width: 1160px;
+    height: 120px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    padding-top: 40px;
 }
-#awards .inner img{
-    display: block;
-    width: 220px; height: 46px;
-    margin-left: 10px;
-    margin-right: 10px;
-    align-self: center;
+#awards .swiper-container{
+    display: flex;
+    width: 1000px;
+    height: 120px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
 }
-#awards .awards_base .arrow{
+#awards .swiper-container .swiper-slide{
+    display: flex;
+    height: 120px;
+    align-items: center;
+
+}
+
+#awards .arrow{
     width: 80px; height: 80px;
     position: absolute;
     top: 20px;
+    
     font-size: 32px;
     color: lightgrey;
     text-align: center;
@@ -637,8 +631,8 @@ iframe{
     border-radius: 50%;
     border: 1px solid lightgrey;
 }
-#awards #awards_left_scroll_button{left: 0px;}
-#awards #awards_right_scroll_button{right: 0px;}
+#awards .awards_left_scroll_button{left: 0px;}
+#awards .awards_right_scroll_button{right: 0px;}
 
 /* footer */
 footer{

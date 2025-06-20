@@ -6,14 +6,20 @@
     <link rel="stylesheet" href="main.css">
     <script defer src="main.js"></script>
 
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Document</title>
+    <title>Starbucks Coffee Korea</title>
+    <link rel="icon" href="webres-starbucks/favicon.ico">
 </head>
 <body>
     <header>
@@ -302,31 +308,17 @@
         <p>스타벅스 프로모션 <span onclick="starbucksPromotion_click()">⬆</span></p>
       </div>
 
-      <section id="promotion">
-        <div class="inner">
-          <div id="left_scroll_button" class="slide_button">←</div>
-          <div id="right_scroll_button" class="slide_button">→</div>
-          <div class="promotion_slide">
-            <div class="promotion_items">
-              <img src="webres-starbucks/images/promotion_slide1.jpg" alt="">
-              <a href="" class="detail">자세히 보기</a>
-            </div>
-            <div class="promotion_items">
-              <img src="webres-starbucks/images/promotion_slide2.jpg" alt="">
-              <a href="" class="detail">자세히 보기</a>
-            </div>
-            <div class="promotion_items">
-              <img src="webres-starbucks/images/promotion_slide3.jpg" alt="">
-              <a href="" class="detail">자세히 보기</a>
-            </div>
-            <div class="promotion_items">
-              <img src="webres-starbucks/images/promotion_slide4.jpg" alt="">
-              <a href="" class="detail">자세히 보기</a>
-            </div>
-            <div class="promotion_items">
-              <img src="webres-starbucks/images/promotion_slide5.jpg" alt="">
-              <a href="" class="detail">자세히 보기</a>
-            </div>
+      <section class="promotion">
+        <div class="swiper-container">
+          <div class="left slide_button">←</div>
+          <div class="right slide_button">→</div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="webres-starbucks/images/promotion_slide1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/promotion_slide2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/promotion_slide3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/promotion_slide4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/promotion_slide5.jpg" alt=""></div>
           </div>
         </div>
       </section>
@@ -415,26 +407,22 @@
     </section>
 
     <section id="awards">
-      <div class="awards_base">
-        <div id="awards_left_scroll_button" class="arrow" onclick="awardsScroll_left()">←</div>
-        <div id="awards_right_scroll_button" class="arrow" onclick="awardsScroll_right()">→</div>
-        <div class="inner">
-          <img src="webres-starbucks/images/awards_slide1.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide2.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide3.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide4.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide5.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide6.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide7.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide8.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide9.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide10.jpg" alt="" class="awards_items">
-          
-          <img src="webres-starbucks/images/awards_slide1.jpg" alt="" class="awards_items">
-          <!-- <img src="webres-starbucks/images/awards_slide2.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide3.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide4.jpg" alt="" class="awards_items">
-          <img src="webres-starbucks/images/awards_slide5.jpg" alt="" class="awards_items"> -->
+      <div class="inner">
+        <div class="arrow awards_left_scroll_button">←</div>
+        <div class="arrow awards_right_scroll_button">→</div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide2.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide3.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide4.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide5.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide6.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide7.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide8.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide9.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="webres-starbucks/images/awards_slide10.jpg" alt=""></div>
+          </div>
         </div>
       </div>
     </section>

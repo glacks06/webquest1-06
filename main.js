@@ -143,14 +143,40 @@ function starbucksPromotion_click(){
 }
 
 // promotion items 캐러셀
-$('#promotion .inner .promotion_slide').slick({
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    nextArrow:$('#right_scroll_button'),
-    prevArrow:$('#left_scroll_button'),
-    dots: true,
+// $('#promotion .inner .promotion_slide').slick({
+//     autoplay: true,
+//     autoplaySpeed: 3000,
+//     slidesToShow: 3,
+//     slidesToScroll: 1,
+//     nextArrow:$('#right_scroll_button'),
+//     prevArrow:$('#left_scroll_button'),
+//     dots: true,
+// });
+
+
+const promotion_slide = new Swiper('.promotion .swiper-container',{
+    loop : true,
+    autoplay : {
+        delay: 3000
+    },
+    slidesPerView: 3,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '.promotion .right',
+        prevEl: '.promotion .left'
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        // renderBullet: function (index, className) {
+        //     return `
+        //         <div class="${className}">
+        //         <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
+        //         </div>
+        //     `;
+        // }
+    }
+
 });
 
 // youtube section image moving effect
@@ -206,12 +232,15 @@ for(let i = 0; i < slide_in_boxs_right.length; i++){
 }
 
 // awards 캐러셀
-
-$('#awards .inner').slick({
-    autoplay: true,
-    autoplaySpeed: 3000,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    nextArrow:$('#awards_right_scroll_button'),
-    prevArrow:$('#awards_left_scroll_button')
-})
+const awards_slide = new Swiper('#awards .swiper-container',{
+    loop : true,
+    autoplay : {
+        delay: 3000
+    },
+    slidesPerView: 5,
+    spaceBetween: 10,
+    navigation: {
+        nextEl: '#awards .awards_right_scroll_button',
+        prevEl: '#awards .awards_left_scroll_button'
+    },
+});
