@@ -91,10 +91,12 @@ window.addEventListener('scroll', function(){
 
 let visual_imgs = [];
 
-visual_imgs.push([document.getElementById('visual_title')])
-visual_imgs.push([document.getElementById('oatmeal_img'), document.getElementById('oatmeal_text')]);
-visual_imgs.push([document.getElementById('caramel_img'), document.getElementById('caramel_text')]);
-visual_imgs.push([document.getElementById('spoon')]);
+visual_imgs.push(document.getElementsByClassName('visual_title'))
+visual_imgs.push(document.getElementsByClassName('oatmeal'));
+visual_imgs.push(document.getElementsByClassName('caramel'));
+visual_imgs.push(document.getElementsByClassName('spoon'));
+console.log(visual_imgs)
+
 
 let time = 1000;
 let turm = 1000;
@@ -104,6 +106,7 @@ for(let i = 0; i < visual_imgs.length; i++){
         setTimeout(function(){
             visual_imgs[i][j].classList.add('fade-in');
         }, time)
+        
     }
     time += turm;
 }
@@ -139,7 +142,7 @@ setInterval(informScroll, 2000, inform_text_arr, transforms, inform_scroll);
 // 스타벅스 프로모션 펼치기
 
 function starbucksPromotion_click(){
-    $('#promotion').slideToggle();
+    $('.promotion').slideToggle();
 }
 
 // promotion items 캐러셀
@@ -168,15 +171,7 @@ const promotion_slide = new Swiper('.promotion .swiper-container',{
     pagination: {
         el: '.swiper-pagination',
         clickable: true,
-        // renderBullet: function (index, className) {
-        //     return `
-        //         <div class="${className}">
-        //         <img src="webres-starbucks/images/promotion_slide_pager.png" alt="">
-        //         </div>
-        //     `;
-        // }
     }
-
 });
 
 // youtube section image moving effect
