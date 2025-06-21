@@ -164,6 +164,7 @@ const promotion_slide = new Swiper('.promotion .swiper-container',{
     },
     slidesPerView: 3,
     spaceBetween: 10,
+    centeredSlides: true,
     navigation: {
         nextEl: '.promotion .right',
         prevEl: '.promotion .left'

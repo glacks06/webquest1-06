@@ -283,7 +283,10 @@ header .side_eventInfo img{
 }
 #inform .promotion .swiper-slide{
     text-align: center;
-    
+    opacity: 0.5;
+}
+#inform .promotion .swiper-slide-active{
+    opacity: 1;
 }
 #inform .promotion .slide_button{
     width: 50px;
